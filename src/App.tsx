@@ -32,6 +32,8 @@ import DentalInsurance from './pages/insurance/DentalInsurance';
 import VisionInsurance from './pages/insurance/VisionInsurance';
 import PetInsurance from './pages/insurance/PetInsurance';
 import GadgetInsurance from './pages/insurance/GadgetInsurance';
+import Insurance from './pages/insurance/Insurance';
+import Investments from './pages/investments/Investments';
 import Compare from './pages/Compare';
 import ApplyNow from './pages/ApplyNow';
 import AboutUs from './pages/AboutUs';
@@ -70,6 +72,7 @@ function App() {
             <Route path="/credit-cards/shopping" element={<ShoppingCreditCard />} />
 
             {/* Insurance */}
+            <Route path="/insurance" element={<Insurance />} />
             <Route path="/insurance/life" element={<LifeInsurance />} />
             <Route path="/insurance/health" element={<HealthInsurance />} />
             <Route path="/insurance/car" element={<CarInsurance />} />
@@ -85,6 +88,9 @@ function App() {
             <Route path="/insurance/vision" element={<VisionInsurance />} />
             <Route path="/insurance/pet" element={<PetInsurance />} />
             <Route path="/insurance/gadget" element={<GadgetInsurance />} />
+
+            {/* Investments */}
+            <Route path="/investments" element={<Investments />} />
 
             {/* Other Pages */}
             <Route path="/compare" element={<Compare />} />
