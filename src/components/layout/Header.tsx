@@ -12,7 +12,6 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img src="/images/logo.jpg" alt="Kreditwala Logo" className="h-8 w-auto" />
-              <span className="ml-4 text-xl font-bold text-gray-900">Kreditwala</span>
             </Link>
           </div>
 
