@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleMobileLinkClick = (path: string) => {
+    setIsMenuOpen(false);
+    navigate(path);
+  };
 
   return (
     <header className="bg-white shadow-md">
@@ -105,7 +111,7 @@ const Header = () => {
             </Link>
 
             <Link
-              to="/login"
+              to="/business-partner-login"
               className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium"
             >
               Login
@@ -117,6 +123,7 @@ const Header = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? (
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,101 +140,161 @@ const Header = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-white shadow-lg`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <div className="space-y-1">
-            <Link to="/loans" className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+            <button
+              onClick={() => handleMobileLinkClick('/loans')}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+            >
               Loans
-            </Link>
+            </button>
             <div className="pl-4 space-y-1">
-              <Link to="/loans/personal" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              <button
+                onClick={() => handleMobileLinkClick('/loans/personal')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Personal Loan
-              </Link>
-              <Link to="/loans/home" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/loans/home')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Home Loan
-              </Link>
-              <Link to="/loans/business" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/loans/business')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Business Loan
-              </Link>
-              <Link to="/loans/education" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/loans/education')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Education Loan
-              </Link>
+              </button>
             </div>
           </div>
 
           <div className="space-y-1">
-            <Link to="/credit-cards" className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+            <button
+              onClick={() => handleMobileLinkClick('/credit-cards')}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+            >
               Credit Cards
-            </Link>
+            </button>
             <div className="pl-4 space-y-1">
-              <Link to="/credit-cards/rewards" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              <button
+                onClick={() => handleMobileLinkClick('/credit-cards/rewards')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Rewards Credit Card
-              </Link>
-              <Link to="/credit-cards/travel" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/credit-cards/travel')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Travel Credit Card
-              </Link>
-              <Link to="/credit-cards/fuel" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/credit-cards/fuel')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Fuel Credit Card
-              </Link>
-              <Link to="/credit-cards/shopping" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/credit-cards/shopping')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Shopping Credit Card
-              </Link>
+              </button>
             </div>
           </div>
 
           <div className="space-y-1">
-            <Link to="/insurance" className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+            <button
+              onClick={() => handleMobileLinkClick('/insurance')}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+            >
               Insurance
-            </Link>
+            </button>
             <div className="pl-4 space-y-1">
-              <Link to="/insurance/health" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              <button
+                onClick={() => handleMobileLinkClick('/insurance/health')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Health Insurance
-              </Link>
-              <Link to="/insurance/life" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/insurance/life')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Life Insurance
-              </Link>
-              <Link to="/insurance/car" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/insurance/car')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Car Insurance
-              </Link>
-              <Link to="/insurance/home" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/insurance/home')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Home Insurance
-              </Link>
+              </button>
             </div>
           </div>
 
           <div className="space-y-1">
-            <Link to="/investments" className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+            <button
+              onClick={() => handleMobileLinkClick('/investments')}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+            >
               Investments
-            </Link>
+            </button>
             <div className="pl-4 space-y-1">
-              <Link to="/investments/mutual-funds" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              <button
+                onClick={() => handleMobileLinkClick('/investments/mutual-funds')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Mutual Funds
-              </Link>
-              <Link to="/investments/fixed-deposits" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/investments/fixed-deposits')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Fixed Deposits
-              </Link>
-              <Link to="/investments/stocks" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/investments/stocks')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Stocks
-              </Link>
-              <Link to="/investments/gold" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">
+              </button>
+              <button
+                onClick={() => handleMobileLinkClick('/investments/gold')}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              >
                 Gold Investment
-              </Link>
+              </button>
             </div>
           </div>
 
-          <Link
-            to="/compare"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+          <button
+            onClick={() => handleMobileLinkClick('/compare')}
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
           >
             Compare
-          </Link>
+          </button>
 
-          <Link
-            to="/login"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+          <button
+            onClick={() => handleMobileLinkClick('/business-partner-login')}
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
           >
             Login
-          </Link>
+          </button>
         </div>
       </div>
     </header>

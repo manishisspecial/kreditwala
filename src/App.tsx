@@ -42,6 +42,8 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import Disclaimer from './pages/Disclaimer';
 import Sitemap from './pages/Sitemap';
+import BusinessPartnerLogin from './pages/BusinessPartnerLogin';
+import BusinessPartnerSignup from './pages/BusinessPartnerSignup';
 
 function App() {
   return (
@@ -52,6 +54,10 @@ function App() {
           <Routes>
             {/* Home */}
             <Route path="/" element={<Home />} />
+
+            {/* Business Partner */}
+            <Route path="/business-partner-login" element={<BusinessPartnerLogin />} />
+            <Route path="/business-partner-signup" element={<BusinessPartnerSignup />} />
 
             {/* Loans */}
             <Route path="/loans" element={<Loans />} />
