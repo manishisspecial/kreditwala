@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
+import Loans from './pages/loans/Loans';
 import PersonalLoan from './pages/loans/PersonalLoan';
 import HomeLoan from './pages/loans/HomeLoan';
 import BusinessLoan from './pages/loans/BusinessLoan';
@@ -51,6 +52,7 @@ function App() {
             <Route path="/" element={<Home />} />
 
             {/* Loans */}
+            <Route path="/loans" element={<Loans />} />
             <Route path="/loans/personal" element={<PersonalLoan />} />
             <Route path="/loans/home" element={<HomeLoan />} />
             <Route path="/loans/business" element={<BusinessLoan />} />
