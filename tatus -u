@@ -1,0 +1,5 @@
+[33m56813ed[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fix mobile menu navigation and improve header component
+[33mb47e3d7[m Add missing components and fix App.tsx errors
+[33m87fff57[m Remove Kreditwala text from header, keep only logo
+[33m68dd5f8[m Add main insurance and investments pages
+[33m1bb00fe[m Add main loans page and update loan components

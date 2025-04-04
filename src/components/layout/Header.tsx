@@ -3,11 +3,25 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleMobileLinkClick = (path: string) => {
     setIsMenuOpen(false);
+    setOpenSubmenu(null);
     navigate(path);
+  };
+
+  const toggleSubmenu = (menu: string) => {
+    setOpenSubmenu(openSubmenu === menu ? null : menu);
+  };
+
+  const handleMainMenuClick = (path: string, menu: string) => {
+    if (path) {
+      handleMobileLinkClick(path);
+    } else {
+      toggleSubmenu(menu);
+    }
   };
 
   return (
@@ -114,14 +128,17 @@ const Header = () => {
               to="/business-partner-login"
               className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium"
             >
-              Login
+              Partners Login
             </Link>
           </nav>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                setIsMenuOpen(!isMenuOpen);
+                setOpenSubmenu(null);
+              }}
               className="text-gray-700 hover:text-blue-600 focus:outline-none"
               aria-label="Toggle menu"
             >
@@ -144,12 +161,20 @@ const Header = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <div className="space-y-1">
             <button
-              onClick={() => handleMobileLinkClick('/loans')}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              onClick={() => handleMainMenuClick('', 'loans')}
+              className="flex justify-between w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
             >
               Loans
+              <svg
+                className={`h-5 w-5 transform ${openSubmenu === 'loans' ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
-            <div className="pl-4 space-y-1">
+            <div className={`pl-4 space-y-1 ${openSubmenu === 'loans' ? 'block' : 'hidden'}`}>
               <button
                 onClick={() => handleMobileLinkClick('/loans/personal')}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
@@ -179,12 +204,20 @@ const Header = () => {
 
           <div className="space-y-1">
             <button
-              onClick={() => handleMobileLinkClick('/credit-cards')}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              onClick={() => handleMainMenuClick('', 'credit-cards')}
+              className="flex justify-between w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
             >
               Credit Cards
+              <svg
+                className={`h-5 w-5 transform ${openSubmenu === 'credit-cards' ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
-            <div className="pl-4 space-y-1">
+            <div className={`pl-4 space-y-1 ${openSubmenu === 'credit-cards' ? 'block' : 'hidden'}`}>
               <button
                 onClick={() => handleMobileLinkClick('/credit-cards/rewards')}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
@@ -214,12 +247,20 @@ const Header = () => {
 
           <div className="space-y-1">
             <button
-              onClick={() => handleMobileLinkClick('/insurance')}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              onClick={() => handleMainMenuClick('', 'insurance')}
+              className="flex justify-between w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
             >
               Insurance
+              <svg
+                className={`h-5 w-5 transform ${openSubmenu === 'insurance' ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
-            <div className="pl-4 space-y-1">
+            <div className={`pl-4 space-y-1 ${openSubmenu === 'insurance' ? 'block' : 'hidden'}`}>
               <button
                 onClick={() => handleMobileLinkClick('/insurance/health')}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
@@ -249,12 +290,20 @@ const Header = () => {
 
           <div className="space-y-1">
             <button
-              onClick={() => handleMobileLinkClick('/investments')}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              onClick={() => handleMainMenuClick('', 'investments')}
+              className="flex justify-between w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
             >
               Investments
+              <svg
+                className={`h-5 w-5 transform ${openSubmenu === 'investments' ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
-            <div className="pl-4 space-y-1">
+            <div className={`pl-4 space-y-1 ${openSubmenu === 'investments' ? 'block' : 'hidden'}`}>
               <button
                 onClick={() => handleMobileLinkClick('/investments/mutual-funds')}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
@@ -293,7 +342,7 @@ const Header = () => {
             onClick={() => handleMobileLinkClick('/business-partner-login')}
             className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
           >
-            Login
+            Partners Login
           </button>
         </div>
       </div>
