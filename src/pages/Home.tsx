@@ -1,13 +1,17 @@
 import React from 'react';
 import Hero from '../components/home/Hero';
-import ProductsGrid from '../components/home/ProductsGrid';
+import Features from '../components/home/Features';
+import Testimonials from '../components/home/Testimonials';
+import Newsletter from '../components/common/Newsletter';
 
 const Home = () => {
   return (
-    <>
+    <div className="min-h-screen">
       <Hero />
-      <ProductsGrid />
-    </>
+      <Features />
+      <Testimonials />
+      <Newsletter />
+    </div>
   );
 };
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
+import Header from './components/common/Header';
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
 import Home from './pages/Home';
 import Loans from './pages/loans/Loans';
 import PersonalLoan from './pages/loans/PersonalLoan';
@@ -42,24 +43,26 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import Disclaimer from './pages/Disclaimer';
 import Sitemap from './pages/Sitemap';
-import BusinessPartnerLogin from './pages/BusinessPartnerLogin';
-import BusinessPartnerSignup from './pages/BusinessPartnerSignup';
+import About from './pages/About';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import BusinessPartnerLogin from './components/auth/BusinessPartnerLogin';
+import BusinessPartnerSignup from './components/auth/BusinessPartnerSignup';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="flex flex-col min-h-screen">
         <Header />
+        <Navbar />
         <main className="flex-grow">
           <Routes>
-            {/* Home */}
             <Route path="/" element={<Home />} />
-
-            {/* Business Partner */}
-            <Route path="/business-partner-login" element={<BusinessPartnerLogin />} />
-            <Route path="/business-partner-signup" element={<BusinessPartnerSignup />} />
-
-            {/* Loans */}
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/business-partner/login" element={<BusinessPartnerLogin />} />
+            <Route path="/business-partner/signup" element={<BusinessPartnerSignup />} />
             <Route path="/loans" element={<Loans />} />
             <Route path="/loans/personal" element={<PersonalLoan />} />
             <Route path="/loans/home" element={<HomeLoan />} />
@@ -69,15 +72,11 @@ function App() {
             <Route path="/loans/gold" element={<GoldLoan />} />
             <Route path="/loans/loan-against-property" element={<LoanAgainstProperty />} />
             <Route path="/loans/two-wheeler" element={<TwoWheelerLoan />} />
-
-            {/* Credit Cards */}
             <Route path="/credit-cards" element={<CreditCard />} />
             <Route path="/credit-cards/rewards" element={<RewardsCreditCard />} />
             <Route path="/credit-cards/travel" element={<TravelCreditCard />} />
             <Route path="/credit-cards/fuel" element={<FuelCreditCard />} />
             <Route path="/credit-cards/shopping" element={<ShoppingCreditCard />} />
-
-            {/* Insurance */}
             <Route path="/insurance" element={<Insurance />} />
             <Route path="/insurance/life" element={<LifeInsurance />} />
             <Route path="/insurance/health" element={<HealthInsurance />} />
@@ -94,11 +93,7 @@ function App() {
             <Route path="/insurance/vision" element={<VisionInsurance />} />
             <Route path="/insurance/pet" element={<PetInsurance />} />
             <Route path="/insurance/gadget" element={<GadgetInsurance />} />
-
-            {/* Investments */}
             <Route path="/investments" element={<Investments />} />
-
-            {/* Other Pages */}
             <Route path="/compare" element={<Compare />} />
             <Route path="/apply-now" element={<ApplyNow />} />
             <Route path="/about-us" element={<AboutUs />} />
@@ -113,6 +108,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
