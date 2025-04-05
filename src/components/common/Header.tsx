@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -17,12 +18,18 @@ const Header = () => {
             </a>
           </div>
           <div className="flex space-x-4">
-            <a href="/login" className="text-sm hover:text-primary-300">
-              Login
-            </a>
-            <a href="/register" className="text-sm hover:text-primary-300">
-              Register
-            </a>
+            <Link
+              to="/business-partner/login"
+              className="text-sm hover:text-primary-300"
+            >
+              Business Partner Login
+            </Link>
+            <Link
+              to="/business-partner/signup"
+              className="text-sm hover:text-primary-300"
+            >
+              Business Partner Register
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,44 +15,44 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <a href="/" className="text-2xl font-display font-bold text-primary-900">
+              <Link to="/" className="text-2xl font-display font-bold text-primary-900">
                 KreditWala
-              </a>
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="border-primary-500 text-primary-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
                 Home
-              </a>
-              <a
-                href="/about"
+              </Link>
+              <Link
+                to="/about"
                 className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
                 About
-              </a>
-              <a
-                href="/services"
+              </Link>
+              <Link
+                to="/services"
                 className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
                 Services
-              </a>
-              <a
-                href="/contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <a
-              href="/login"
+            <Link
+              to="/business-partner/login"
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600"
             >
-              Login
-            </a>
+              Business Partner Login
+            </Link>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
             <button
@@ -72,36 +73,36 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
         <div className="pt-2 pb-3 space-y-1">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="bg-primary-50 border-primary-500 text-primary-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
             Home
-          </a>
-          <a
-            href="/about"
+          </Link>
+          <Link
+            to="/about"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
             About
-          </a>
-          <a
-            href="/services"
+          </Link>
+          <Link
+            to="/services"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
             Services
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
             Contact
-          </a>
-          <a
-            href="/login"
+          </Link>
+          <Link
+            to="/business-partner/login"
             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
           >
-            Login
-          </a>
+            Business Partner Login
+          </Link>
         </div>
       </div>
     </nav>
