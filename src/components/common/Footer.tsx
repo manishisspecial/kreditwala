@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import SocialIcons from './SocialIcons';
 
@@ -17,24 +18,24 @@ const Footer = () => {
             <h4 className="text-lg font-display font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-primary-200 hover:text-white transition-colors">
+                <Link to="/" className="text-primary-200 hover:text-white transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-primary-200 hover:text-white transition-colors">
+                <Link to="/about" className="text-primary-200 hover:text-white transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="text-primary-200 hover:text-white transition-colors">
+                <Link to="/services" className="text-primary-200 hover:text-white transition-colors">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-primary-200 hover:text-white transition-colors">
+                <Link to="/contact" className="text-primary-200 hover:text-white transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -42,24 +43,29 @@ const Footer = () => {
             <h4 className="text-lg font-display font-bold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/services/business-loans" className="text-primary-200 hover:text-white transition-colors">
+                <Link to="/services/business-loans" className="text-primary-200 hover:text-white transition-colors">
                   Business Loans
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/personal-loans" className="text-primary-200 hover:text-white transition-colors">
+                <Link to="/services/personal-loans" className="text-primary-200 hover:text-white transition-colors">
                   Personal Loans
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/home-loans" className="text-primary-200 hover:text-white transition-colors">
-                  Home Loans
-                </a>
+                <Link to="/services/insurance" className="text-primary-200 hover:text-white transition-colors">
+                  Insurance
+                </Link>
               </li>
               <li>
-                <a href="/services/credit-cards" className="text-primary-200 hover:text-white transition-colors">
+                <Link to="/services/investments" className="text-primary-200 hover:text-white transition-colors">
+                  Investments
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/credit-cards" className="text-primary-200 hover:text-white transition-colors">
                   Credit Cards
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,16 +74,20 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <FaPhone className="mt-1 mr-3 text-primary-400" />
-                <span className="text-primary-200">+91 1234567890</span>
+                <a href="tel:+919311757194" className="text-primary-200 hover:text-white transition-colors">
+                  +91 93117 57194
+                </a>
               </li>
               <li className="flex items-start">
                 <FaEnvelope className="mt-1 mr-3 text-primary-400" />
-                <span className="text-primary-200">info@kreditwala.com</span>
+                <a href="mailto:support@kreditwala.com" className="text-primary-200 hover:text-white transition-colors">
+                  support@kreditwala.com
+                </a>
               </li>
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-3 text-primary-400" />
                 <span className="text-primary-200">
-                  123 Business Street, Financial District, Mumbai, India
+                  PLOT NO. Y9 &10, IIND FLOOR, MAIN NAJAFGARH ROAD, Vipin Garden, New Delhi, Delhi 110059
                 </span>
               </li>
             </ul>

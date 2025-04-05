@@ -37,14 +37,18 @@ const Contact = () => {
               <FaPhone className="mt-1 mr-3 text-primary-500" />
               <div>
                 <h3 className="font-display font-bold text-primary-900">Phone</h3>
-                <p className="text-gray-600">+91 1234567890</p>
+                <a href="tel:+919311757194" className="text-gray-600 hover:text-primary-500 transition-colors">
+                  +91 93117 57194
+                </a>
               </div>
             </div>
             <div className="flex items-start">
               <FaEnvelope className="mt-1 mr-3 text-primary-500" />
               <div>
                 <h3 className="font-display font-bold text-primary-900">Email</h3>
-                <p className="text-gray-600">info@kreditwala.com</p>
+                <a href="mailto:support@kreditwala.com" className="text-gray-600 hover:text-primary-500 transition-colors">
+                  support@kreditwala.com
+                </a>
               </div>
             </div>
             <div className="flex items-start">
@@ -52,7 +56,7 @@ const Contact = () => {
               <div>
                 <h3 className="font-display font-bold text-primary-900">Address</h3>
                 <p className="text-gray-600">
-                  123 Business Street, Financial District, Mumbai, India
+                  PLOT NO. Y9 &10, IIND FLOOR, MAIN NAJAFGARH ROAD, Vipin Garden, New Delhi, Delhi 110059
                 </p>
               </div>
             </div>

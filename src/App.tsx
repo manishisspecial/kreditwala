@@ -48,6 +48,11 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import BusinessPartnerLogin from './components/auth/BusinessPartnerLogin';
 import BusinessPartnerSignup from './components/auth/BusinessPartnerSignup';
+import BusinessLoans from './pages/services/BusinessLoans';
+import PersonalLoans from './pages/services/PersonalLoans';
+import InsuranceServices from './pages/services/Insurance';
+import InvestmentServices from './pages/services/Investments';
+import CreditCards from './pages/services/CreditCards';
 
 const App = () => {
   return (
@@ -60,6 +65,11 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/business-loans" element={<BusinessLoans />} />
+            <Route path="/services/personal-loans" element={<PersonalLoans />} />
+            <Route path="/services/insurance" element={<InsuranceServices />} />
+            <Route path="/services/investments" element={<InvestmentServices />} />
+            <Route path="/services/credit-cards" element={<CreditCards />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/business-partner/login" element={<BusinessPartnerLogin />} />
             <Route path="/business-partner/signup" element={<BusinessPartnerSignup />} />
