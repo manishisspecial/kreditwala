@@ -60,7 +60,7 @@ const App = () => {
       <div className="flex flex-col min-h-screen">
         <Header />
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -71,6 +71,7 @@ const App = () => {
             <Route path="/services/investments" element={<InvestmentServices />} />
             <Route path="/services/credit-cards" element={<CreditCards />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/apply-now" element={<ApplyNow />} />
             <Route path="/business-partner/login" element={<BusinessPartnerLogin />} />
             <Route path="/business-partner/signup" element={<BusinessPartnerSignup />} />
             <Route path="/loans" element={<Loans />} />
@@ -105,7 +106,6 @@ const App = () => {
             <Route path="/insurance/gadget" element={<GadgetInsurance />} />
             <Route path="/investments" element={<Investments />} />
             <Route path="/compare" element={<Compare />} />
-            <Route path="/apply-now" element={<ApplyNow />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
