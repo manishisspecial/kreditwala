@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import SocialIcons from '../common/SocialIcons';
 
 const Hero = () => {
@@ -39,19 +40,19 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-10 flex justify-center gap-4"
           >
-            <a
-              href="/apply"
+            <Link
+              to="/apply-now"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 transition-colors"
             >
               Apply Now
               <FaArrowRight className="ml-2 h-4 w-4" />
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="inline-flex items-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-primary-900 transition-colors"
             >
               Contact Us
-            </a>
+            </Link>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}

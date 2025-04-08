@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Header from './components/common/Header';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import BackToTop from './components/common/BackToTop';
 import Home from './pages/Home';
 import Loans from './pages/loans/Loans';
 import PersonalLoan from './pages/loans/PersonalLoan';
@@ -70,7 +70,6 @@ const App = () => {
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
-        <Header />
         <Navbar />
         <main className="flex-grow pt-16">
           <Routes>
@@ -128,6 +127,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </Router>
   );
