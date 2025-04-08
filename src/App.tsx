@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/common/Header';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
@@ -46,17 +46,29 @@ import Sitemap from './pages/Sitemap';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import BusinessPartnerLogin from './components/auth/BusinessPartnerLogin';
-import BusinessPartnerSignup from './components/auth/BusinessPartnerSignup';
+import PartnerLogin from './pages/auth/PartnerLogin';
+import PartnerRegister from './pages/auth/PartnerRegister';
 import BusinessLoans from './pages/services/BusinessLoans';
 import PersonalLoans from './pages/services/PersonalLoans';
 import InsuranceServices from './pages/services/Insurance';
 import InvestmentServices from './pages/services/Investments';
 import CreditCards from './pages/services/CreditCards';
+import CreditCardDetails from './pages/services/CreditCardDetails';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
         <Navbar />
@@ -70,10 +82,11 @@ const App = () => {
             <Route path="/services/insurance" element={<InsuranceServices />} />
             <Route path="/services/investments" element={<InvestmentServices />} />
             <Route path="/services/credit-cards" element={<CreditCards />} />
+            <Route path="/services/credit-cards/:id" element={<CreditCardDetails />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/apply-now" element={<ApplyNow />} />
-            <Route path="/business-partner/login" element={<BusinessPartnerLogin />} />
-            <Route path="/business-partner/signup" element={<BusinessPartnerSignup />} />
+            <Route path="/partner/login" element={<PartnerLogin />} />
+            <Route path="/partner/register" element={<PartnerRegister />} />
             <Route path="/loans" element={<Loans />} />
             <Route path="/loans/personal" element={<PersonalLoan />} />
             <Route path="/loans/home" element={<HomeLoan />} />
