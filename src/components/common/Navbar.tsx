@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-gray-900 text-white py-2">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile Layout */}
           <div className="sm:hidden flex flex-col space-y-2">
@@ -76,7 +76,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <header className="bg-white shadow-md">
+      <header className="fixed top-12 left-0 right-0 z-50 bg-white shadow-md">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex">
@@ -154,7 +154,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile menu */}
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
+        <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:hidden absolute w-full bg-white shadow-lg`}>
           <div className="pt-2 pb-3 space-y-1">
             <Link
               to="/"
