@@ -114,7 +114,7 @@ const CreditCards = () => {
               </div>
               <div className="flex justify-between items-center mt-4">
                 <Link
-                  to={`/credit-cards/${card.id}`}
+                  to={`/services/credit-cards/${card.id}`}
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
                   View Details

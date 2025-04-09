@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown, FaPhone, FaEnvelope } from 'react-icons/fa';
 import Logo from './Logo';
 
 const Navbar = () => {
@@ -65,6 +65,40 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Top Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white pt-4 pb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mobile Layout */}
+          <div className="sm:hidden flex flex-col space-y-2 sm:pt-2">
+            <div className="flex justify-between">
+              <a href="mailto:support@kreditwala.com" className="flex items-center text-sm hover:text-blue-400">
+                <FaEnvelope className="mr-2" />
+                support@kreditwala.com
+              </a>
+              <a href="tel:+919311757194" className="flex items-center text-sm hover:text-blue-400">
+                <FaPhone className="mr-2" />
+                +91-9311757194
+              </a>
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden sm:flex flex-row justify-between items-center">
+            {/* Contact Info */}
+            <div className="flex items-center space-x-6">
+              <a href="mailto:support@kreditwala.com" className="flex items-center text-sm hover:text-blue-400">
+                <FaEnvelope className="mr-2" />
+                support@kreditwala.com
+              </a>
+              <a href="tel:+919311757194" className="flex items-center text-sm hover:text-blue-400">
+                <FaPhone className="mr-2" />
+                +91-9311757194
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Main Navbar */}
       <nav className={`fixed w-full z-40 mt-10 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
