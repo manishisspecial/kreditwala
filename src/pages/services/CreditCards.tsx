@@ -84,48 +84,49 @@ const CreditCards = () => {
         />
       </div>
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredCards.map(card => (
-          <div key={card.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+      {/* Card Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredCards.map((card) => (
+          <div
+            key={card.id}
+            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+          >
             <div className="p-6">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">{card.name}</h3>
-                  <p className="mt-1 text-sm text-gray-500">{card.issuer}</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Link
-                    to={`/services/credit-cards/${card.id}`}
-                    className="text-primary-500 hover:text-primary-600 text-sm font-medium"
-                  >
-                    Know More
-                  </Link>
-                  <button
-                    onClick={() => handleCardSelection(card)}
-                    className={`p-2 rounded-full ${
-                      selectedCards.some(c => c.id === card.id)
-                        ? 'bg-primary-500 text-white'
-                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                    }`}
-                  >
-                    <FaPlus className="h-4 w-4" />
-                  </button>
-                </div>
+              <div className="flex items-center justify-center mb-4">
+                <img
+                  src={card.image}
+                  alt={card.name}
+                  className="h-32 w-auto object-contain"
+                />
               </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Annual Fee:</span>
-                  <span className="text-sm font-medium">{card.annualFee}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Joining Fee:</span>
-                  <span className="text-sm font-medium">{card.joiningFee}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Reward Rate:</span>
-                  <span className="text-sm font-medium">{card.rewardRate}</span>
-                </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{card.name}</h3>
+              <p className="text-gray-600 mb-4">{card.issuer}</p>
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600">
+                  <span className="font-medium">Annual Fee:</span> {card.annualFee}
+                </p>
+                <p className="text-sm text-gray-600">
+                  <span className="font-medium">Joining Fee:</span> {card.joiningFee}
+                </p>
+                <p className="text-sm text-gray-600">
+                  <span className="font-medium">Reward Rate:</span> {card.rewardRate}
+                </p>
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <Link
+                  to={`/credit-cards/${card.id}`}
+                  className="text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  View Details
+                </Link>
+                <a
+                  href={card.applyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                >
+                  Apply Now
+                </a>
               </div>
             </div>
           </div>

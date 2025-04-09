@@ -54,6 +54,9 @@ import InsuranceServices from './pages/services/Insurance';
 import InvestmentServices from './pages/services/Investments';
 import CreditCards from './pages/services/CreditCards';
 import CreditCardDetails from './pages/services/CreditCardDetails';
+import CoreTeam from './pages/CoreTeam';
+import Careers from './pages/Careers';
+import Partners from './pages/Partners';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -71,21 +74,22 @@ const App = () => {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-16">
+        <main className="flex-grow pt-20 md:pt-24">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/core-team" element={<CoreTeam />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/business-loans" element={<BusinessLoans />} />
-            <Route path="/services/personal-loans" element={<PersonalLoans />} />
-            <Route path="/services/insurance" element={<InsuranceServices />} />
-            <Route path="/services/investments" element={<InvestmentServices />} />
             <Route path="/services/credit-cards" element={<CreditCards />} />
             <Route path="/services/credit-cards/:id" element={<CreditCardDetails />} />
+            <Route path="/services/personal-loans" element={<PersonalLoans />} />
+            <Route path="/services/business-loans" element={<BusinessLoans />} />
+            <Route path="/services/insurance" element={<InsuranceServices />} />
+            <Route path="/services/investments" element={<InvestmentServices />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/apply-now" element={<ApplyNow />} />
-            <Route path="/partner/login" element={<PartnerLogin />} />
-            <Route path="/partner/register" element={<PartnerRegister />} />
+            <Route path="/partner-login" element={<PartnerLogin />} />
+            <Route path="/partner-register" element={<PartnerRegister />} />
             <Route path="/loans" element={<Loans />} />
             <Route path="/loans/personal" element={<PersonalLoan />} />
             <Route path="/loans/home" element={<HomeLoan />} />
@@ -124,6 +128,8 @@ const App = () => {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/partners" element={<Partners />} />
           </Routes>
         </main>
         <Footer />
